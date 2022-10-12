@@ -1,0 +1,52 @@
+#Entendendo o que é o Git e a sua importância
+O Git foi criado em 2005 por Linus Torvalds e consiste em um sistema de versionamento de código distribuído. Ele é muito utilizado no desenvolvimento de softwares com a função de registrar quaisquer alterações feitas em cima de um código/arquivo. Após a criação do Git, surgiu a plataforma GitHub, que é uma espécie de rede social voltada para profissionais de TI e que se sustenta na tecnologia GIT. Na plataforma GitHub, é possível criar repositório e hospedar projetos neles, colaborar com softwares open source, seguir outros programadores e interagir com códigos de outros usuários. O GitHub armazena os dados em uma nuvem, tornando possível acessá-los em qualquer navegador. 
+
+# Comandos Básicos para um bom desempenho no Terminal
+•	cd (change directory): muda o diretório
+•	dir (Windows) ls (Unix): lista os diretórios contidos na pasta em que o terminal está aberto
+•	cls (Windows) clear (Unix): limpa o terminal
+•	mkdir (make directory): cria um diretório
+•	del (Windows): deleta apenas os arquivos dentro da pasta, não a pasta
+•	rmdir (remove directory – Windows): remove o repositório todo
+•	rm -rf (Unix): remove todas as pastas. Na flag “-rf”, o “r” significa recursivo, isto é , serão deletadas todas as pastas contidas e o “f” é para forçar a remoção sem que seja necessária qualquer tipo de confirmação.
+Entendendo como o Git funciona
+•	SHA1:
+A sigla significa Secure Hash Algorithm (Algoritmo de Hash Seguro), é um conjunto de funções hash criptográficas projetadas pela NSA (Agência de Segurança Nacional dos EUA). A encriptação gera um conjunto de caracteres identificador de 40 dígitos. Esse conjunto é único para cada versão. Portanto, o SHA1 é uma forma curta de representar um arquivo.
+
+ 
+
+•	Objetos fundamentais
+Existem 4 tipos de objetos que são armazenados no git: commit objects, annotaded tag objects, blobs and tree objects
+Blobs (bolha)
+Cada arquivo no Git é armazenado como um objeto blob. Um blob (objeto binário grande) do Git é o tipo de objeto usado para armazenar o conteúdo de cada arquivo em um repositório. O hash SHA-1 do arquivo é calculado e armazenado no objeto do blob.
+ 
+Trees:
+Armazenam blobs, também possui metadados. O blob armazena apenas o sha1 do arquivo, mas a árvore armazena também o nome dos arquivos. Ela trabalha como um mapa, ela relaciona o nome do arquivo ao hash gerado a partir de seu conteúdo,
+ 
+Commits
+Quando você executa o comando git add o git bate uma foto (snapshot) do working directory e a armazena em sua memória interna. O objeto de commit é composto pelo metadata do commit+ tree object (snapshot do working directory) + identificador do commit antecessor/ancestral/pai. O Git gera também um hash para o objeto de commit, que é o identificador que visualizamos ao executarmos um git log. Caso um bit seja alterado no commit, mesmo que seja apenas uma vírgula, um novo identificador será gerado.
+ 
+
+
+
+
+•	Sistema distribuído
+
+O GIT fornece um repositório local para todos os desenvolvedores, com todo o histórico de commits e otimizando o desenvolvimento de softwares em conjunto.
+
+•	Segurança (Chave SSH)
+
+O SSH consiste em um protocolo que permite a transmissão de dados, possibilitando o encapsulamento de aplicações. Com as chaves SSH, administradores de sistema e desenvolvedores de aplicativos têm acesso interativo a sistemas remotos com segurança. É um recurso amplamente utilizado em atualizações de banco de dados, backups, gerenciamento automatizado de sistemas e aplicativos de monitoramento de integridade do sistema.
+
+Na prática, as chaves SSH desempenham um papel muito importante no funcionamento das redes digitais automatizadas utilizadas em data centers e empresas em geral. Esta solução garante conexões criptografadas com outros sistemas, plataformas e redes que podem ser distribuídas em diferentes ambientes, remotos ou na nuvem.
+
+As chaves SSH substituem as técnicas de segurança isoladas que são úteis para criptografar transferências de dados. No entanto, esse uso precisa ser devidamente protegido, analisado periodicamente, documentado e gerenciado sistematicamente. Se esse processo não for levado a sério, a segurança de todo o ambiente estará em risco.
+
+#Trabalhando com o Git Hub
+Para criar um repositório diretamente no github, deve-se clicar no ícone "+" no canto superior direito da tela com seu usuário logado. Em seguida, deve-se clicar em "New repository". Na página carregada, é necessário definir o nome do repositório e o nível de privacidade (público ou privada). Além disso, nessa página, é possível colocar uma descrição para informar o motivo de criação do repositório. Se o usuário julgar necessário, também pode marcar a caixa “Add a README file”, que é basicamente onde são inseridas eventuais considerações, anotações, links úteis e demais conteúdos relevantes e relacionados ao repositório. Por fim, clica-se em “Create repositoy”.
+Com o repositório criado, é possível fazer edições no README. Para criar um hiperlink no arquivo README, coloca-se o texto do hiperlink entre colchetes e, logo após, sem espaços, o link da página a ser acessada entre parênteses. Para que qualquer alteração realizada desse modo seja salva e exibida, deve-se clicar no botão “Commit changes”.
+Além disso, no botão verde chamado “code”, é possível obter o código para clonar o repositório na máquina. 
+Para clonar, clica-se em “code”, copia-se o código “HTTPS” e inicia o gitbash clicando com o botão direito e em “gitbash here” na pasta da máquina em que se deseja clonar o repositório. No terminal do git, deve-se digitar o comando “git clone” e colar o link HTTPS no terminal.
+ 
+No clone do repositório, caso sejam criadas novas pastas e arquivos, será necessário utilizar o comando “git add .” no terminal do git para que esses novos arquivos sejam considerados no controle de versão local. 
+Para enviá-los ao repositório, primeiramente, no github, deve-se utilizar o comando “git commit” no terminal git. Para facilitar o controle de versões, pode-se utilizar a flag “-m” no comando “git commit” e adicionar um comentário. Os comentários são muito importantes! Exemplo: git commit -m “Inclusão das anotações do curso de Git/GitHub”. No entanto, para enviar de fato para o repositório, ainda é necessário utilizar o comando “git push origin main”.
